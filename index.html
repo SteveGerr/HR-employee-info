@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/logo_short.svg" type="image/x-icon">
+    <title>HR</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header__row-1">
+                <a href="/" class="appNameAndLogo">
+                    <img src="./assets/logo_short.svg" width="32" height="32" alt="logo">
+                    <span>HR</span>
+                </a>
+                <button class="profileBtn">Выйти</button>
+            </div>
+            <div class="header__row tabs">
+                <div class="tab all active">Все</div>
+                <div class="tab wait">Ожидают загрузки</div>
+                <div class="tab uploaded">Загружены кандидатом</div>
+            </div>
+        </div>
+        <div class="page">
+           <div class="employees">
+            <!-- employeesSearch -->
+                <div class="employeesSearch">
+                    <!-- employeesSearch__input -->
+                    <div class="employeesSearch__inputWrap hrInput">
+                        <input class="employeesSearch__input" type="search" placeholder="Поиск">
+                        <img class="employeesSearch__magnifier" src="./assets/magnifer.svg" width="19" height="19" alt="magnifier">
+                    </div>
+                    <!-- employeesSearch__filter -->
+                    <button class="employeesSearch__filter">
+                        <img src="./assets/Union.svg" width="20" height="18" alt="filter">
+                    </button>
+                </div>
+                <!-- employeesList -->
+                <div class="employeesList">
+                    <div class="employeeItem">
+                        <div class="employeeName">Константиновский Константин Константинович</div>
+                        <div class="employeeStatus">
+                            <div class="employeeStatusType awaitingDownload">
+                                Ожидают загрузки
+                            </div>
+                            <div class="employeeStatusDate">
+                                <img src="./assets/ic_s_calendar.svg" alt="">
+                                12.02.2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employeeItem">
+                        <div class="employeeName">Константиновский Константин Игоревич</div>
+                        <div class="employeeStatus">
+                            <div class="employeeStatusType awaitingDownload">
+                                Ожидают загрузки
+                            </div>
+                            <div class="employeeStatusDate">
+                                <img src="./assets/ic_s_calendar.svg" alt="">
+                                12.02.2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employeeItem">
+                        <div class="employeeName">Константиновский Константин Игоревич</div>
+                        <div class="employeeStatus">
+                            <div class="employeeStatusType awaitingDownload">
+                                Ожидают загрузки
+                            </div>
+                            <div class="employeeStatusDate">
+                                <img src="./assets/ic_s_calendar.svg" alt="">
+                                12.02.2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employeeItem active">
+                        <div class="employeeName">Константиновский Константин Игоревич</div>
+                        <div class="employeeStatus">
+                            <div class="employeeStatusType uploaded">
+                                Загружена кандидатом
+                            </div>
+                            <div class="employeeStatusDate">
+                                <img src="./assets/ic_s_calendar.svg" alt="">
+                                 12.02.2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employeeItem">
+                        <div class="employeeName">Константиновский Константин Игоревич</div>
+                        <div class="employeeStatus">
+                            <div class="employeeStatusType uploaded">
+                                Загружена кандидатом
+                            </div>
+                            <div class="employeeStatusDate">
+                                <img src="./assets/ic_s_calendar.svg" alt="">
+                                12.02.2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employeeItem">
+                        <div class="employeeName">Константиновский Константин Игоревич</div>
+                        <div class="employeeStatus">
+                            <div class="employeeStatusType uploaded">
+
+                                Загружена кандидатом
+                            </div>
+                            <div class="employeeStatusDate">
+                                <img src="./assets/ic_s_calendar.svg" alt="">
+                                12.02.2022
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employeeItem">
+                        <div class="employeeName">Константиновский Константин Игоревич</div>
+                        <div class="employeeStatus">
+                            <div class="employeeStatusType uploaded">
+
+                                Загружена кандидатом
+                            </div>
+                            <div class="employeeStatusDate">
+                                <img src="./assets/ic_s_calendar.svg" alt="">
+                                12.02.2022
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           <!-- employeeInfo -->
+           <div class="employeeInfo">
+               <!-- employeeServiceInfo -->
+               <div class="employeeServiceInfo">
+                    <div class="employeeServiceInfo__row status">
+                        <div class="employeeServiceInfo__col">
+                            <h2>Константиновский Константин Игоревич</h2>
+                            <!-- employeeStatusType -->
+                            <div class="employeeStatusType uploaded">
+
+                                Загружена кандидатом
+                            </div>
+                        </div>
+                    </div>
+                    <div class="employeeServiceInfo__row info">
+                        <div class="employeeServiceInfo__col">
+                            <div class="employeeServiceInfo__row mb-15">
+                                <div class="employeeServiceInfo__title application">Заявка:</div>
+                                <div class="employeeServiceInfo__value">HR-48160</div>
+                            </div>
+                            <div class="employeeServiceInfo__row">
+                                <div class="employeeServiceInfo__title login">Логин:</div>
+                                <div class="employeeServiceInfo__value">kkonstantinovski</div>
+                            </div>
+                        </div>
+                        <!-- employeeServiceInfo__col -->
+                        <div class="employeeServiceInfo__col dates">
+                            <div class="employeeServiceInfo__row mb-15">
+                                <div class="employeeServiceInfo__title employmentDate">Дата выхода:</div>
+                                <div class="employeeServiceInfo__value">08.10.2022</div>
+                            </div>
+                            <div class="employeeServiceInfo__row">
+                                <div class="employeeServiceInfo__title submissionDate">Дата оформления:</div>
+                                <div class="employeeServiceInfo__value">08.10.2022</div>
+                            </div>
+                        </div>
+                        <!-- employeeServiceInfo__col -->
+                        <div class="employeeServiceInfo__col statuses">
+                            <div class="employeeServiceInfo__row mb-15">
+                                <div class="employeeServiceInfo__title">Статус ФП:</div>
+                                <div class="employeeServiceInfo__value uploaded">
+                                    Обновлено
+                                </div>
+                            </div>
+                            <div class="employeeServiceInfo__row">
+                                <div class="employeeServiceInfo__title">Статус УЗ:</div>
+                                <div class="employeeServiceInfo__value active">
+
+                                    Активна
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- employeeServiceInfo__col -->
+                </div>
+                <!-- employeePersonalInfo -->
+                <div class="employeePersonalInfo">
+                    <h3>Личная информация</h3>
+                    <div class="employeePersonalInfo__row">
+                        <div class="hrInput surname">
+                            <label for="surname">Фамилия</label>
+                            <input type="text" id="surname" value="Константиновский">
+                        </div>
+                        <div class="hrInput name">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" value="Константин">
+                        </div>
+                        <div class="hrInput">
+                            <label for="middleName">Отчество</label>
+                            <input type="text" id="middleName" value="Игоревич">
+                        </div>
+                    </div>
+                    <div class="employeePersonalInfo__row bio">
+                        <div class="hrInput birthday">
+                            <label for="birthday">Дата рождения</label>
+                            <input type="date" id="birthday" value="1998-08-08">
+                        </div>
+                        <div class="hrInput citizenship">
+                            <label>Гражданство</label>
+                            <div class="select">
+                                <select>
+                                    <option>Российская Федерация</option>
+                                    <option>Другое</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- employeePersonalInfo__gender -->
+                        <div class="employeePersonalInfo__gender">
+                            <label class="employeePersonalInfo__man" for="genderMan">
+                                <input type="radio" id="genderMan" name="gender" checked>
+                                <span>Мужчина</span>
+                            </label>
+                            <label class="employeePersonalInfo__woman" for="genderWoman">
+                                <input type="radio" id="genderWoman" name="gender">
+                                <span>Женщина</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- employee city -->
+                    <div class="employeePersonalInfo__row">
+                        <div class="hrInput city">
+                            <input type="text" name="employeeCity" id="employeeCity" value="Санкт-Петербург" disabled>
+                            <label for="employeeCity">Город проживания</label>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>

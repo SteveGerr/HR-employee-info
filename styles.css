@@ -1,0 +1,536 @@
+:root {
+    /* Colors */
+    --HRBlue: #005BFF;
+    --HRGrey: rgba(97, 131, 162, 0.1);
+    --HRLightGrey: rgba(0, 17, 34, 0.66);
+    --HRDarkGrey: rgba(0, 17, 34, 0.95);
+    --HRLightGreen: #E4F5E8;
+    --HRGreen: #1DAE40;
+    --HRLightYellow: rgba(247, 178, 0, 0.12);
+    --HROrange: #F7B200;
+    --HRBackgroundColorWhite: #FFF;
+    --HRBackgroundColorLightGrey: #F5F5F5;
+
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+
+
+    /* Margins */
+    --indent-12: 12px;
+    --indent-16: 16px;
+    --indent-24: 24px;
+    --indent-32: 32px;
+
+    /* Border radius */
+    --HRBorderRadiusInput: 8px;
+    --HRBorderRadiusStatus: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--HRBackgroundColorLightGrey);
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--HRDarkGrey);
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 56px 44px;
+    padding: 0 32px;
+    background-color: var(--HRBackgroundColorWhite);
+    border: 2px solid rgba(97, 131, 162, 0.16);
+}
+.header__row-1 {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+.header__row.tabs {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+}
+.appNameAndLogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 70px;
+
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--HRDarkGrey);
+    cursor: pointer;
+}
+.tab {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    margin: 0 16px;
+    color: var(--HRLightGrey);
+    cursor: pointer;
+}
+.tab.active {
+    position: relative;
+    color: var(--HRDarkGrey);
+}
+.tab.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--HRBlue);
+    border-radius: 4px;
+}
+.tab.all {
+    margin: 0 16px 0 0;
+}
+.profileBtn {
+    padding: 10px;
+    background-color: var(--HRBackgroundColorWhite);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.profileBtn:hover{
+    background-color: var(--HRBackgroundColorLightGrey);
+}
+
+/* Page */
+.page {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    column-gap: 20px;
+    align-items: start;
+    margin: 0 auto;
+    padding: var(--indent-16) var(--indent-32);
+}
+
+/* employees */
+.employees {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 76px auto;
+    width: 100%;
+    max-width: 336px;
+}
+.employeesList,
+.employeesSearch {
+    flex-shrink: 0;
+    width: 336px;
+}
+.employeesSearch {
+    display: flex;
+    align-items: center;
+    padding: var(--indent-16);
+}
+.employeesSearch {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.employeesSearch__inputWrap {
+    position: relative;
+}
+.employeesSearch__inputWrap .employeesSearch__input {
+    width: 100%;
+    max-width: 244px;
+    padding: 12px 12px 12px 44px;
+    margin-top: 0;
+}
+.employeesSearch__inputWrap img {
+    position: absolute;
+    top: calc(50% - 9px);
+    left: 14px;
+}
+.employeesSearch__filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 44px;
+    max-width: 44px;
+    height: 44px;
+    background-color: var(--HRGrey);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.employeeItem {
+    flex-direction: column;
+    border-top: 2px solid var(--HRGrey);
+    padding: var(--indent-12) var(--indent-16);
+    cursor: pointer;
+}
+.employeeItem:hover {
+    background-color: var(--HRGrey);
+}
+.employeeItem:last-child {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.employeeInfo,
+.employeeItem,
+.employeesSearch {
+    background-color: var(--HRBackgroundColorWhite);
+}
+.employeeInfo {
+    display: grid;
+    grid-template-columns: 1016px;
+    grid-template-rows: 185px 335px;
+    align-items: start;
+}
+.employeeName {
+    margin-bottom: 10px;
+    font-size: 15px;
+    max-width: 300px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.employeeStatus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.employeeStatusDate {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 15px;
+}
+.employeeStatusDate img {
+    margin-right: 6px;
+}
+.employeeStatusType {
+    display: inline-flex;
+    align-items: center;
+    max-width: 185px;
+    height: 24px;
+    padding: 0 12px 0 20px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--HRDarkGrey);
+    line-height: 20px;
+}
+.employeeStatusDate {
+    display: flex;
+    align-items: center;
+}
+.employeeStatusType {
+    position: relative;
+}
+.employeeStatusType.awaitingDownload {
+    background-color: var(--HRLightYellow);
+}
+.employeeStatusType.uploaded {
+    background-color: var(--HRLightGreen);
+}
+.employeeStatusType::before {
+    content: "";
+    display: flex;
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - 3px);
+    left: 9px;
+}
+.employeeStatusType.awaitingDownload::before {
+    background-color: var(--HROrange);
+}
+.employeeStatusType.uploaded::before {
+    background-color: var(--HRGreen);
+}
+
+/* employeeInfo */
+.employeeInfo {
+    border-radius: 8px;
+}
+.employeeInfo h2 {
+    margin-bottom: 9px;
+    font-size: 24px;
+    letter-spacing: -0.3px;
+}
+.employeeServiceInfo {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid var(--HRGrey);
+}
+.employeePersonalInfo h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+.employeeServiceInfo,
+.employeePersonalInfo {
+    padding: var(--indent-12) var(--indent-24);
+}
+.employeeServiceInfo__col {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.employeeServiceInfo__row,
+.employeePersonalInfo__row {
+    display: flex;
+    flex-direction: row;
+}
+.employeeServiceInfo__row.status {
+    margin-bottom: 27px;
+}
+/* .employeeServiceInfo__row.info */
+.employeeServiceInfo__col.dates {
+    margin: 0 48px 0 59px;
+}
+.employeeServiceInfo__col.dates::after {
+    content: "";
+    display: block;
+    height: 54px;
+    position: absolute;
+    top: -3px;
+    right: -23px;
+    border-left: 1px solid rgba(153, 175, 199, 0.25)
+}
+.employeeServiceInfo__col.dates::before {
+    content: "";
+    display: block;
+    height: 54px;
+    position: absolute;
+    top: -3px;
+    left: -25px;
+    border-left: 1px solid rgba(153, 175, 199, 0.25)
+}
+.employeeServiceInfo__row.mb-15 {
+    margin-bottom: 15px;
+}
+.employeeServiceInfo__title {
+    color: var(--HRLightGrey);
+}
+.employeeServiceInfo__value {
+    display: inline-flex;
+    align-items: flex-end;
+    color: var(--HRDarkGrey);
+    position: relative;
+}
+.employeeServiceInfo__value.active,
+.employeeServiceInfo__value.uploaded {
+    margin-left: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--HRDarkGrey);
+}
+.employeeServiceInfo__value::after {
+    content: "";
+    display: flex;
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    border-radius: 100%;
+    position: absolute;
+    top: calc(50% - 3px);
+    left: -10px;
+}
+.employeeServiceInfo__value.uploaded::after {
+    background-color: var(--HROrange);
+}
+.employeeServiceInfo__value.active::after {
+    background-color: var(--HRGreen);
+}
+.employeeServiceInfo__title,
+.employeeServiceInfo__value {
+    height: 18px;
+    font-size: 15px;
+}
+.employeeServiceInfo__title.application,
+.employeeServiceInfo__title.login {
+    width: 63px;
+}
+.employeeServiceInfo__title.employmentDate,
+.employeeServiceInfo__title.submissionDate {
+    width: 145px;
+}
+.employeeServiceInfo__col.statuses
+.employeeServiceInfo__row {
+    align-items: flex-end;
+}
+.employeeServiceInfo__col.statuses
+.employeeServiceInfo__title {
+    width: 99px;
+}
+
+.employeePersonalInfo {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+}
+.employeePersonalInfo__row.bio {
+    margin: 24px 0;
+}
+.hrInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 306px;
+    position: relative;
+}
+.hrInput label {
+    font-size: 13px;
+    color: var(--HRLightGrey);
+}
+.hrInput input,
+.hrInput .select {
+    position: relative;
+    height: 44px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--HRGrey);
+}
+.hrInput .select::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 7px;
+    position: absolute;
+    top: calc(50% - 3px);
+    right: 17px;
+    background: url("./assets/Arrow-down.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+.hrInput input,
+.hrInput select {
+    padding: 12px;
+}
+.hrInput select {
+    width: 100%;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    cursor: inherit;
+    appearance: none;
+    outline: none;
+}
+.hrInput.name {
+    margin: 0 24px;
+}
+.hrInput input:focus,
+.hrInput select:focus,
+.hrInput select option {
+    outline: none;
+}
+.hrInput.city {
+    width: 100%;
+    max-width: none;
+    margin-top: 17px;
+    position: relative;
+}
+.hrInput.city label {
+    position: absolute;
+    top: -16px;
+    left: 0;
+}
+.hrInput.city input:disabled {
+    color: #0011225e;
+}
+.hrInput.city input:disabled ~ label {
+    color: #0011227a;
+}
+.hrInput.birthday {
+    position: relative;
+}
+.hrInput.birthday::after {
+    content: "";
+    display: inline-flex;
+    width: 18px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    background: url("./assets/calendar.svg") center no-repeat;
+    pointer-events: none;
+}
+.hrInput.citizenship {
+    margin: 0 24px;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    -webkit-appearance: none;
+}
+.employeePersonalInfo__gender {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.employeePersonalInfo__gender input {
+    margin: 0 8px 0 12px;
+}
+.employeePersonalInfo__man {
+    margin-right: 10px;
+}
+.employeePersonalInfo__man,
+.employeePersonalInfo__woman {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 148px;
+    height: 44px;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 2px solid var(--HRGrey);
+    border-radius: 8px;
+}
+.employeePersonalInfo__man input,
+.employeePersonalInfo__woman input {
+    display: none;
+}
+.employeePersonalInfo__man span,
+.employeePersonalInfo__woman span {
+    display: inline-block;
+	cursor: pointer;
+	position: relative;
+	margin-right: 0;
+	padding-left: 25px;
+	line-height: 18px;
+	user-select: none;
+}
+.employeePersonalInfo__man span::before,
+.employeePersonalInfo__woman span::before {
+    content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+    bottom: 0;
+	left: -3px;
+	background: url("./assets/radio.svg") center center no-repeat;
+}
+.employeePersonalInfo__man input:checked + span::before,
+.employeePersonalInfo__woman input:checked + span::before {
+    background: url("./assets/radio-checked.svg") 0 0 no-repeat;
+}
